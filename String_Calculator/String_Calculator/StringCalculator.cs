@@ -13,13 +13,9 @@ namespace String_Calculator
             {
                 return 0;
             }
-            else if (numbers == "1")
-            {
-                return 1;
-            }
             else
             {
-                return 2;
+                return Int32.Parse(numbers);
             }
         }
     }
