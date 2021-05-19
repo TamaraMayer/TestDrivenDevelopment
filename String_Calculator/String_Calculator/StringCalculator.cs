@@ -19,9 +19,9 @@ namespace String_Calculator
                 string[] temp = numbers.Split(",");
                 int tempresult = 0;
 
-                for (int i = 0; i < temp.Length; i++)
+                foreach(string s in temp)
                 {
-                    tempresult = tempresult + Int32.Parse(temp[i]);
+                    tempresult = tempresult + Int32.Parse(s);
                 }
 
                 return tempresult;
