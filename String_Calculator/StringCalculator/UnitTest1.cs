@@ -51,5 +51,13 @@ namespace StringCalculator.Test
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
         }
+
+        [DataTestMethod]
+        [DataRow("//;\n1,2",3)
+
+        public void Add_Should_Retun_Added_Numbers_Ans_Support_Different_Deliminators(string numberString, int solution)
+        {
+            Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
+        }
     }
 }
