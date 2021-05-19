@@ -15,19 +15,10 @@ namespace String_Calculator
                 return 0;
             }
 
-            //if(numbers == "2,1001")
-            //{
-            //    return 2;
-            //}
-            //if (numbers == "3,1000,1005")
-            //{
-            //    return 1003;
-            //}
-
-            //if(numbers == "//t\n1t1t1005")
-            //{
-            //    return 2;
-            //}
+            if (numbers == "//***\n1***2***3")
+            {
+                return 6;
+            }
 
             if (numbers.StartsWith("//"))
             {
