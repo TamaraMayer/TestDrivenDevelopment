@@ -1,5 +1,6 @@
 using String_Calculator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace StringCalculator.Test
 {
@@ -14,9 +15,10 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow ("1")]
+        [DataRow("2")]
         public void Add_Should_Return_The_Given_Number(string numberString)
         {
-            Assert.AreEqual(1, String_Calculator.StringCalculator.Add(numberString));
+            Assert.AreEqual(Int32.Parse(numberString), String_Calculator.StringCalculator.Add(numberString));
         }
     }
 }
