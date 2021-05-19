@@ -55,6 +55,7 @@ namespace StringCalculator.Test
         [DataTestMethod]
         [DataRow("//;\n1;2",3)]
         [DataRow("//;\n1;3", 4)]
+        [DataRow ("//t\n1t1t3",5)]
 
         public void Add_Should_Retun_Added_Numbers_Ans_Support_Different_Deliminators(string numberString, int solution)
         {
