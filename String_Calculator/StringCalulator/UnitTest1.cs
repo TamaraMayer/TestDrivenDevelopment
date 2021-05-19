@@ -9,10 +9,10 @@ namespace StringCalulator
         {
         }
 
-        [Test]
+        [Data]
         public void AddMethod_Should_Return_Zero_For_Emty_String()
         {
-            Assert.Pass();
+            
         }
     }
 }

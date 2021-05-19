@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("StringCalculator.Test")]
 
 namespace String_Calculator
 {
-    class StringCalculator
+    public static class StringCalculator
     {
 
     }
