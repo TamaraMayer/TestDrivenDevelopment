@@ -14,14 +14,30 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "1\n2,3")
+            if (numbers.Contains("\n"))
             {
-                return 6;
-            }
+                int result = 0;
+                string[] temp = numbers.Split("\n");
+                string[] temp2;
 
-            if(numbers == "1\n2,4" || numbers == "1\n2\n4")
-            {
-                return 7;
+                for(int i = 0; i < temp.Length; i++)
+                {
+                    if (temp[i].Contains(","))
+                    {
+                        temp2 = temp[i].Split(",");
+
+                        foreach (string s in temp2)
+                        {
+                            result = result + Int32.Parse(s);
+                        }
+                    }
+                    else
+                    {
+                        result = result + Int32.Parse(temp[i]);
+                    }
+                }
+
+                return result;
             }
 
             if (numbers.Contains(","))
