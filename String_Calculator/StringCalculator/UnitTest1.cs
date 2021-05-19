@@ -16,9 +16,18 @@ namespace StringCalculator.Test
         [DataTestMethod]
         [DataRow ("1")]
         [DataRow("2")]
+        [DataRow("5")]
+        [DataRow("10")]
         public void Add_Should_Return_The_Given_Number(string numberString)
         {
             Assert.AreEqual(Int32.Parse(numberString), String_Calculator.StringCalculator.Add(numberString));
+        }
+
+        [DataTestMethod]
+        [DataRow ("1,2", 3)]
+        public void Add_Should_Return_The_added_numbers(string numberString, int solution)
+        {
+            Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
         }
     }
 }
