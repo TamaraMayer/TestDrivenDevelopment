@@ -72,7 +72,7 @@ namespace StringCalculator.Test
             {
                 String_Calculator.StringCalculator.Add(numberString);
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentException e)
             {
                 actualExceptionMessage += e.Message;
             }

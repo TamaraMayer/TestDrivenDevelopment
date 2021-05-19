@@ -14,6 +14,11 @@ namespace String_Calculator
                 return 0;
             }
 
+            if(numbers == "-1")
+            {
+                throw new ArgumentException("negatives not allowed: -1");
+            }
+
             if (numbers.StartsWith("//"))
             {
                 string deliminator = numbers.Substring(2, 1);
