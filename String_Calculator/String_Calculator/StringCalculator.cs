@@ -9,7 +9,7 @@ namespace String_Calculator
     {
         public static int Add(string numbers)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
