@@ -20,11 +20,11 @@ namespace String_Calculator
                 string[] temp = numbers.Split("\n");
                 string[] temp2;
 
-                for(int i = 0; i < temp.Length; i++)
+                foreach (string s1 in temp)
                 {
-                    if (temp[i].Contains(","))
+                    if (s1.Contains(","))
                     {
-                        temp2 = temp[i].Split(",");
+                        temp2 = s1.Split(",");
 
                         foreach (string s in temp2)
                         {
@@ -33,7 +33,7 @@ namespace String_Calculator
                     }
                     else
                     {
-                        result = result + Int32.Parse(temp[i]);
+                        result = result + Int32.Parse(s1);
                     }
                 }
 
