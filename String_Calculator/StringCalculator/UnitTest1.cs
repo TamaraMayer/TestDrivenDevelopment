@@ -7,8 +7,9 @@ namespace StringCalculator.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Add_Should_Return_Zero_When_Given_An_EmtyList()
         {
+           Assert.AreEqual(0,String_Calculator.StringCalculator.Add(string.Empty));
         }
     }
 }
