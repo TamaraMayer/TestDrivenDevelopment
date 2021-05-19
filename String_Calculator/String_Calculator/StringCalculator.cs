@@ -15,19 +15,21 @@ namespace String_Calculator
                 return 0;
             }
 
-            if (numbers == "//***\n1***2***3")
-            {
-                return 6;
-            }
-            if (numbers == "//abc\n5,7")
-            {
-                return 12;
-            }
+            //if (numbers == "//***\n1***2***3")
+            //{
+            //    return 6;
+            //}
+            //if (numbers == "//abc\n5,7")
+            //{
+            //    return 12;
+            //}
 
             if (numbers.StartsWith("//"))
             {
-                string deliminator = numbers.Substring(2, 1);
-                string numberString = numbers.Substring(3, numbers.Length - 3);
+                int index = numbers.IndexOf("\n");
+
+                string deliminator = numbers.Substring(2, index-2);
+                string numberString = numbers.Substring(index+1, numbers.Length - index-1);
 
                 string[] temp = numberString.Split(deliminator);
 

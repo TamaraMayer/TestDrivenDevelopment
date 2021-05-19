@@ -96,8 +96,8 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow("//***\n1***2***3", 6)]
-        [DataRow("//abc\n5,7",12)]
-        public void Add_Deliminators_Can_Be_Of_Any_lengtj(string numberString, int solution)
+        [DataRow("//abc\n5abc7",12)]
+        public void Add_Deliminators_Can_Be_Of_Any_lengt(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
         }

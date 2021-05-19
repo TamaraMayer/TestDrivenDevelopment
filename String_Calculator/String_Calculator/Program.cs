@@ -6,7 +6,7 @@ namespace String_Calculator
     {
         static void Main(string[] args)
         {
-            StringCalculator.Add("-1,-3");
+            StringCalculator.Add("//***\n1***2***3");
         }
     }
 }
