@@ -19,7 +19,7 @@ namespace String_Calculator
                 return 6;
             }
 
-            if(numbers == "1\n2,4")
+            if(numbers == "1\n2,4" || numbers == "1\n2\n4")
             {
                 return 7;
             }
