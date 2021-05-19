@@ -14,19 +14,21 @@ namespace String_Calculator
                 return 0;
             }
 
-            if (numbers == "//;\n1;2")
+            if (numbers.StartsWith("//"))
             {
-                return 3;
-            }
+                string deliminator = numbers.Substring(2, 1);
+                string numberString = numbers.Substring(3, numbers.Length - 3);
 
-            if (numbers == "//;\n1;3")
-            {
-                return 4;
-            }
+                string[] temp = numberString.Split(deliminator);
 
-            if(numbers == "//t\n1t1t3")
-            {
-                return 5;
+                int tempresult = 0;
+
+                foreach (string s in temp)
+                {
+                    tempresult = tempresult + Int32.Parse(s);
+                }
+
+                return tempresult;
             }
 
             if (numbers.Contains("\n"))
