@@ -25,6 +25,7 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow ("1,2", 3)]
+        [DataRow("2,2", 4)]
         public void Add_Should_Return_The_added_numbers(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
