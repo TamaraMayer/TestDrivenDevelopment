@@ -14,21 +14,17 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "1,2,3")
-            {
-                return 6;
-            }
-            
-            if(numbers == "1,2,4" || numbers == "1,2,3,1")
-            {
-                return 7;
-            }
-
             if (numbers.Contains(","))
             {
                 string[] temp = numbers.Split(",");
+                int tempresult = 0;
 
-                return Int32.Parse(temp[0]) + Int32.Parse(temp[1]);
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    tempresult = tempresult + Int32.Parse(temp[i]);
+                }
+
+                return tempresult;
             }
             else
             {
