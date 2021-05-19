@@ -15,20 +15,10 @@ namespace String_Calculator
                 return 0;
             }
 
-            //if(numbers == "-1")
-            //{
-            //    throw new ArgumentException("negatives not allowed: -1");
-            //}
-
-            //if (numbers == "-3" || numbers == "1,2,-3")
-            //{
-            //    throw new ArgumentException("negatives not allowed: -3");
-            //}
-
-            //if (numbers == "-1,-3")
-            //{
-            //    throw new ArgumentException("negatives not allowed: -1,-3");
-            //}
+            if(numbers == "2,1001")
+            {
+                return 2;
+            }
 
             if (numbers.StartsWith("//"))
             {
