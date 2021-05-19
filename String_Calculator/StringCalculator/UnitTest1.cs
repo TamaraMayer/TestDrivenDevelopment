@@ -63,7 +63,7 @@ namespace StringCalculator.Test
         }
 
         [DataTestMethod]
-        [DataRow("-1","negatives not allowed: -1")]
+        [DataRow("-1", "negatives not allowed: -1")]
         [DataRow("-3", "negatives not allowed: -3")]
         [DataRow("-1,-3", "negatives not allowed: -1,-3")]
         [DataRow("1,2,-3", "negatives not allowed: -3")]
@@ -87,9 +87,16 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow("2,1001", 2)]
-        [DataRow("3,1000,1005",1003)]
+        [DataRow("3,1000,1005", 1003)]
         [DataRow("//t\n1t1t1005", 2)]
         public void Add_Numbers_Bigger_1000_Should_be_ignored_For_Adding(string numberString, int solution)
+        {
+            Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
+        }
+
+        [DataTestMethod]
+        [DataRow("//***\n1***2***3", 6)]
+        public void Add_Deliminators_Can_Be_Of_Any_lengtj(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
         }
