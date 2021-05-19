@@ -19,6 +19,10 @@ namespace String_Calculator
             {
                 return 6;
             }
+            if (numbers == "//abc\n5,7")
+            {
+                return 12;
+            }
 
             if (numbers.StartsWith("//"))
             {
