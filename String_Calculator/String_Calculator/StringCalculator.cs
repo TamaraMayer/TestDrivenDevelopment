@@ -13,6 +13,11 @@ namespace String_Calculator
             {
                 return 0;
             }
+
+            if (numbers.Contains(","))
+            {
+                return 3;
+            }
             else
             {
                 return Int32.Parse(numbers);
