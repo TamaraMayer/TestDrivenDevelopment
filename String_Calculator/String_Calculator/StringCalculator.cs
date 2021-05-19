@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("StringCalculator.Test")]
 
@@ -14,20 +15,20 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "-1")
-            {
-                throw new ArgumentException("negatives not allowed: -1");
-            }
+            //if(numbers == "-1")
+            //{
+            //    throw new ArgumentException("negatives not allowed: -1");
+            //}
 
-            if (numbers == "-3" || numbers == "1,2,-3")
-            {
-                throw new ArgumentException("negatives not allowed: -3");
-            }
+            //if (numbers == "-3" || numbers == "1,2,-3")
+            //{
+            //    throw new ArgumentException("negatives not allowed: -3");
+            //}
 
-            if (numbers == "-1,-3")
-            {
-                throw new ArgumentException("negatives not allowed: -1,-3");
-            }
+            //if (numbers == "-1,-3")
+            //{
+            //    throw new ArgumentException("negatives not allowed: -1,-3");
+            //}
 
             if (numbers.StartsWith("//"))
             {
@@ -40,6 +41,11 @@ namespace String_Calculator
 
                 foreach (string s in temp)
                 {
+                    if (Int32.Parse(s) < 0)
+                    {
+                        throw new ArgumentException(GetExceptionString(temp));
+                    }
+
                     tempresult = tempresult + Int32.Parse(s);
                 }
 
@@ -60,6 +66,11 @@ namespace String_Calculator
 
                         foreach (string s in temp2)
                         {
+                            if (Int32.Parse(s) < 0)
+                            {
+                                throw new ArgumentException(GetExceptionString(temp));
+                            }
+
                             result = result + Int32.Parse(s);
                         }
                     }
@@ -79,6 +90,11 @@ namespace String_Calculator
 
                 foreach (string s in temp)
                 {
+                    if (Int32.Parse(s) < 0)
+                    {
+                        throw new ArgumentException(GetExceptionString(temp));
+                    }
+
                     tempresult = tempresult + Int32.Parse(s);
                 }
 
@@ -86,8 +102,45 @@ namespace String_Calculator
             }
             else
             {
-                return Int32.Parse(numbers);
+                    if (Int32.Parse(numbers) < 0)
+                    {
+                        throw new ArgumentException("negatives not allowed: "+numbers);
+                    }
+
+                    return Int32.Parse(numbers);
             }
+        }
+
+        private static string GetExceptionString(string[] temp)
+        {
+            string ex = "negatives not allowed: ";
+            string[] temp2;
+
+            foreach (string s in temp)
+            {
+                if (s.Contains(","))
+                {
+                    temp2 = s.Split(",");
+
+                    foreach (string s1 in temp2)
+                    {
+                        if (Int32.Parse(s1) < 0)
+                        {
+                            ex += s1 + ",";
+                        }
+                    }
+                }
+                else
+                {
+                    if (Int32.Parse(s) < 0)
+                    {
+                        ex += s + ",";
+                    }
+                }
+            }
+
+            ex.Remove(ex.Length - 1);
+            return ex;
         }
     }
 }
