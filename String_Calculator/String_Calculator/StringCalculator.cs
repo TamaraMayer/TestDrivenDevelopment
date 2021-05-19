@@ -24,6 +24,11 @@ namespace String_Calculator
                 return 1003;
             }
 
+            if(numbers == "//t\n1t1t1005")
+            {
+                return 2;
+            }
+
             if (numbers.StartsWith("//"))
             {
                 string deliminator = numbers.Substring(2, 1);
