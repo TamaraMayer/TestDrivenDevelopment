@@ -88,6 +88,7 @@ namespace StringCalculator.Test
         [DataTestMethod]
         [DataRow("2,1001", 2)]
         [DataRow("3,1000,1005",1003)]
+        [DataRow("//t\n1t1t1005", 2)]
         public void Add_Numbers_Bigger_1000_Should_be_ignored_For_Adding(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
