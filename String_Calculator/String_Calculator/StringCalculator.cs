@@ -15,15 +15,6 @@ namespace String_Calculator
                 return 0;
             }
 
-            //if (numbers == "//***\n1***2***3")
-            //{
-            //    return 6;
-            //}
-            //if (numbers == "//abc\n5,7")
-            //{
-            //    return 12;
-            //}
-
             if (numbers.StartsWith("//"))
             {
                 int index = numbers.IndexOf("\n");
