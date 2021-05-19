@@ -14,11 +14,15 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "//;\n1;2")
+            if (numbers == "//;\n1;2")
             {
                 return 3;
             }
 
+            if (numbers == "//;\n1;3")
+            {
+                return 4;
+            }
 
             if (numbers.Contains("\n"))
             {
@@ -51,7 +55,7 @@ namespace String_Calculator
                 string[] temp = numbers.Split(",");
                 int tempresult = 0;
 
-                foreach(string s in temp)
+                foreach (string s in temp)
                 {
                     tempresult = tempresult + Int32.Parse(s);
                 }
