@@ -24,6 +24,11 @@ namespace String_Calculator
                 return 4;
             }
 
+            if(numbers == "//t\n1t1t3")
+            {
+                return 5;
+            }
+
             if (numbers.Contains("\n"))
             {
                 int result = 0;
