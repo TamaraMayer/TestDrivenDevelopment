@@ -84,5 +84,12 @@ namespace StringCalculator.Test
 
             Assert.AreEqual(expectedExceptionMessage, actualExceptionMessage);
         }
+
+        [DataTestMethod]
+        [DataRow("2,1001", 2)]
+        public void Add_Numbers_Bigger_1000_Should_be_ignored_For_Adding(string numberString, int solution)
+        {
+            Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
+        }
     }
 }
