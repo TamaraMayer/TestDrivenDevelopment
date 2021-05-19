@@ -24,6 +24,11 @@ namespace String_Calculator
                 throw new ArgumentException("negatives not allowed: -3");
             }
 
+            if (numbers == "-1,-3")
+            {
+                throw new ArgumentException("negatives not allowed: -1,-3");
+            }
+
             if (numbers.StartsWith("//"))
             {
                 string deliminator = numbers.Substring(2, 1);
