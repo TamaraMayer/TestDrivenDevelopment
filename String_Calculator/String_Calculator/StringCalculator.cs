@@ -15,19 +15,19 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "2,1001")
-            {
-                return 2;
-            }
-            if (numbers == "3,1000,1005")
-            {
-                return 1003;
-            }
+            //if(numbers == "2,1001")
+            //{
+            //    return 2;
+            //}
+            //if (numbers == "3,1000,1005")
+            //{
+            //    return 1003;
+            //}
 
-            if(numbers == "//t\n1t1t1005")
-            {
-                return 2;
-            }
+            //if(numbers == "//t\n1t1t1005")
+            //{
+            //    return 2;
+            //}
 
             if (numbers.StartsWith("//"))
             {
@@ -43,6 +43,11 @@ namespace String_Calculator
                     if (Int32.Parse(s) < 0)
                     {
                         throw new ArgumentException(GetExceptionString(temp));
+                    }
+
+                    if (Int32.Parse(s) > 1000)
+                    {
+                        continue;
                     }
 
                     tempresult = tempresult + Int32.Parse(s);
@@ -70,11 +75,26 @@ namespace String_Calculator
                                 throw new ArgumentException(GetExceptionString(temp));
                             }
 
+                            if (Int32.Parse(s) > 1000)
+                            {
+                                continue;
+                            }
+
                             result = result + Int32.Parse(s);
                         }
                     }
                     else
                     {
+                        if (Int32.Parse(s1) < 0)
+                        {
+                            throw new ArgumentException(GetExceptionString(temp));
+                        }
+
+                        if (Int32.Parse(s1) > 1000)
+                        {
+                            continue;
+                        }
+
                         result = result + Int32.Parse(s1);
                     }
                 }
@@ -93,6 +113,10 @@ namespace String_Calculator
                     {
                         throw new ArgumentException(GetExceptionString(temp));
                     }
+                    if (Int32.Parse(s) > 1000)
+                    {
+                        continue;
+                    }
 
                     tempresult = tempresult + Int32.Parse(s);
                 }
@@ -101,12 +125,16 @@ namespace String_Calculator
             }
             else
             {
-                    if (Int32.Parse(numbers) < 0)
-                    {
-                        throw new ArgumentException("negatives not allowed: "+ numbers);
-                    }
+                if (Int32.Parse(numbers) < 0)
+                {
+                    throw new ArgumentException("negatives not allowed: " + numbers);
+                }
+                if (Int32.Parse(numbers) > 1000)
+                {
+                    return 0;
+                }
 
-                    return Int32.Parse(numbers);
+                return Int32.Parse(numbers);
             }
         }
 
