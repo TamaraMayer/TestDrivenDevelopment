@@ -6,7 +6,7 @@ namespace String_Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            StringCalculator.Add("-1,-3");
         }
     }
 }

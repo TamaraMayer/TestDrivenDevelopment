@@ -104,7 +104,7 @@ namespace String_Calculator
             {
                     if (Int32.Parse(numbers) < 0)
                     {
-                        throw new ArgumentException("negatives not allowed: "+numbers);
+                        throw new ArgumentException("negatives not allowed: "+ numbers);
                     }
 
                     return Int32.Parse(numbers);
@@ -139,7 +139,7 @@ namespace String_Calculator
                 }
             }
 
-            ex.Remove(ex.Length - 1);
+            ex = ex.Remove(ex.Length - 1);
             return ex;
         }
     }
