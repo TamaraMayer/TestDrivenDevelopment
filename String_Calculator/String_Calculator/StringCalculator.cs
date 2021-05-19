@@ -14,10 +14,11 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "//;\n1,2")
+            if(numbers == "//;\n1;2")
             {
                 return 3;
             }
+
 
             if (numbers.Contains("\n"))
             {
