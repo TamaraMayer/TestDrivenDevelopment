@@ -16,7 +16,7 @@ namespace StringCalculator.Test
         [DataRow ("1")]
         public void Add_Should_Return_The_Given_Number(string numberString)
         {
-            Assert.AreEqual(numberString.ToString(), String_Calculator.StringCalculator.Add(numberString));
+            Assert.AreEqual(1, String_Calculator.StringCalculator.Add(numberString));
         }
     }
 }
