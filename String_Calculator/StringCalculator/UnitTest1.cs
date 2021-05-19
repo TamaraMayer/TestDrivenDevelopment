@@ -64,6 +64,7 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow("-1","negatives not allowed: -1")]
+        [DataRow("-3", "negatives not allowed: -3")]
         public void Add_Called_With_Negative_Numbers_Should_Throw_Exception(string numberString, string expectedExceptionMessage)
         {
             string actualExceptionMessage = "";
