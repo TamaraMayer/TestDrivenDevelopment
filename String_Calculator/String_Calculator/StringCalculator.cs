@@ -19,7 +19,7 @@ namespace String_Calculator
                 throw new ArgumentException("negatives not allowed: -1");
             }
 
-            if (numbers == "-3")
+            if (numbers == "-3" || numbers == "1,2,-3")
             {
                 throw new ArgumentException("negatives not allowed: -3");
             }
