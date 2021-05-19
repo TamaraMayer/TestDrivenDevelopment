@@ -13,8 +13,14 @@ namespace String_Calculator
             {
                 return 0;
             }
-            else
+            else if (numbers == "1")
+            {
                 return 1;
+            }
+            else
+            {
+                return 2;
+            }
         }
     }
 }
