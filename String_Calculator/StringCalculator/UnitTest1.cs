@@ -101,5 +101,12 @@ namespace StringCalculator.Test
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
         }
+
+        [DataTestMethod]
+        [DataRow("//[*][!]\n5*7!12", 24)]
+        public void Add_Can_Have_Multiple_Deliminators(string numberString, int solution)
+        {
+            Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
+        }
     }
 }
