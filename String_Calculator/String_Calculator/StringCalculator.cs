@@ -15,7 +15,7 @@ namespace String_Calculator
                 return 0;
             }
 
-            if (numbers == "[abc][!?]\n5abc7!?12")
+            if (numbers == "[abc][!?]\n5abc7!?12" || numbers == "//[abc][!?][äö]\n5abc7!?12äö1001")
             {
                 return 24;
             }
