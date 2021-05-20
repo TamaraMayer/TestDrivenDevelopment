@@ -104,6 +104,7 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow("//[*][!]\n5*7!12", 24)]
+        [DataRow("//[*][#][%]\n3*8#23%5",39)]
         public void Add_Can_Have_Multiple_Deliminators(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
