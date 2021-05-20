@@ -6,7 +6,7 @@ namespace String_Calculator
     {
         static void Main(string[] args)
         {
-            StringCalculator.Add("//***\n1***2***3");
+            StringCalculator.Add("//[*][#][%]\n3*8#23%5");
         }
     }
 }

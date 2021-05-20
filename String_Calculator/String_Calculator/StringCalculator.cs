@@ -15,22 +15,27 @@ namespace String_Calculator
                 return 0;
             }
 
-            if(numbers == "//[*][!]\n5*7!12")
-            {
-                return 24;
-            }
+            //if(numbers == "//[*][!]\n5*7!12")
+            //{
+            //    return 24;
+            //}
 
-            if(numbers == "//[*][#][%]\n3*8#23%5")
-            {
-                return 39;
-            }
+            //if(numbers == "//[*][#][%]\n3*8#23%5")
+            //{
+            //    return 39;
+            //}
 
             if (numbers.StartsWith("//"))
             {
+                if (numbers[2] == '[')
+                {
+                    return HandleMultipleDeliminators(numbers);
+                }
+
                 int index = numbers.IndexOf("\n");
 
-                string deliminator = numbers.Substring(2, index-2);
-                string numberString = numbers.Substring(index+1, numbers.Length - index-1);
+                string deliminator = numbers.Substring(2, index - 2);
+                string numberString = numbers.Substring(index + 1, numbers.Length - index - 1);
 
                 string[] temp = numberString.Split(deliminator);
 
@@ -134,6 +139,33 @@ namespace String_Calculator
 
                 return Int32.Parse(numbers);
             }
+        }
+
+        private static int HandleMultipleDeliminators(string numbers)
+        {
+            //if(numbers == "//[*][!]\n5*7!12")
+            //{
+            //    return 24;
+            //}
+
+            //if(numbers == "//[*][#][%]\n3*8#23%5")
+            //{
+            //    return 39;
+            //}
+            int index = numbers.IndexOf("\n");
+
+            string deliminatorString = numbers.Substring(2, index - 2);
+            string[] deliminators = deliminatorString.Split(new char[] { '[', ']' },StringSplitOptions.RemoveEmptyEntries);
+            string numberString = numbers.Substring(index + 1, numbers.Length - index - 1);
+            string[] temp = numberString.Split(deliminators, StringSplitOptions.RemoveEmptyEntries);
+            int result = 0;
+
+            foreach(string s in temp)
+            {
+                result += Int32.Parse(s);
+            }
+
+            return result;
         }
 
         private static string GetExceptionString(string[] temp)
