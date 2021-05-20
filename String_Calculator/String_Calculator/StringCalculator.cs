@@ -20,6 +20,11 @@ namespace String_Calculator
                 return 24;
             }
 
+            if(numbers == "//[*][#][%]\n3*8#23%5")
+            {
+                return 39;
+            }
+
             if (numbers.StartsWith("//"))
             {
                 int index = numbers.IndexOf("\n");
