@@ -112,6 +112,7 @@ namespace StringCalculator.Test
 
         [DataTestMethod]
         [DataRow("//[abc][!?]\n5abc7!?12", 24)]
+        [DataRow("//[abc][!?][дц]\n5abc7!?12дц1001", 24)]
         public void Add_Can_Have_Multiple_Deliminators_of_any_Length(string numberString, int solution)
         {
             Assert.AreEqual(solution, String_Calculator.StringCalculator.Add(numberString));
